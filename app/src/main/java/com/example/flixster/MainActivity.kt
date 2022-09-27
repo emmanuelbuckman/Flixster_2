@@ -11,7 +11,7 @@ import okhttp3.Headers
 import org.json.JSONException
 
 private const val TAG = "MainActivity"
-private const val url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
+private const val api_url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvMovies : RecyclerView
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         rvMovies.layoutManager = LinearLayoutManager(this)
 
         val client = AsyncHttpClient()
-        client.get(url, object: JsonHttpResponseHandler(){
+        client.get(api_url, object: JsonHttpResponseHandler(){
             override fun onFailure(statusCode: Int, headers: Headers?, response: String?, throwable: Throwable?){
                 Log.e(TAG, "On Failure $statusCode")
             }

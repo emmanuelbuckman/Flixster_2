@@ -7,7 +7,7 @@ import org.json.JSONArray
 
 @Parcelize
 data class Movie (
-    val movie: Int,
+    val movieId: Int,
     val posterPath: String,
     val title: String,
     val overview: String,
